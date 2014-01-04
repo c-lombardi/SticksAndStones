@@ -8,14 +8,15 @@ using System.Web.Security;
 
 namespace SticksAndStones.Models
 {
-    public class UsersContext : DbContext
+    public class SandSContext : DbContext
     {
-        public UsersContext()
+        public SandSContext()
             : base("DefaultConnection")
         {
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 
     [Table("UserProfile")]
@@ -32,7 +33,6 @@ namespace SticksAndStones.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
-
         public string ExternalLoginData { get; set; }
     }
 

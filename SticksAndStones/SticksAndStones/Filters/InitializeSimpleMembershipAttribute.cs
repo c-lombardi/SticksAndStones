@@ -25,11 +25,11 @@ namespace SticksAndStones.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<SandSContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new SandSContext())
                     {
                         if (!context.Database.Exists())
                         {
