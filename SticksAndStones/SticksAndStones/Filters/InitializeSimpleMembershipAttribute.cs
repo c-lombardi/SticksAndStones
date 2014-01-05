@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using SticksAndStones.Models;
+using System.Web.Security;
 
 namespace SticksAndStones.Filters
 {
@@ -39,6 +40,14 @@ namespace SticksAndStones.Filters
                     }
 
                     WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    if (!Roles.RoleExists("Admin"))
+                    {
+                        Roles.CreateRole("Admin");
+                    }
+                    if (!Roles.RoleExists("User"))
+                    {
+                        Roles.CreateRole("User");
+                    }
                 }
                 catch (Exception ex)
                 {
