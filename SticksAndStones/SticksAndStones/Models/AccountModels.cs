@@ -17,6 +17,7 @@ namespace SticksAndStones.Models
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Logo> Logos { get; set; }
     }
 
     [Table("UserProfile")]
